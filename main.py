@@ -1,5 +1,5 @@
 import csv
-import csv
+
 # import svgutils
 
 with open('./csv/test.csv', 'r') as file:
