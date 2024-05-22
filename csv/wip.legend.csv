@@ -1,0 +1,13 @@
+C , connector
+P , position_indicator
+PP , pink_position_indicator
+B , breakout
+[] , sleeve_exact
+{} , sleeve_approximate
+@ , pressure_seal
+| , breakout_down
+┘ , breakout_left
+└ , breakout_right
+- , fill
+< , contact_left
+> , contact_right
