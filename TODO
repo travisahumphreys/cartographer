@@ -1,0 +1,30 @@
+# TODO
+
+Alt + C to toggle items in list
+
+## High Priority
+
+- [ ] **Error Handling:** 
+   - Implement thorough error handling for cases like invalid CSV file formats, incorrect measurements, or unknown component types.
+- [ ] **Drawing Logic:**
+   - Implement a drawing function that takes the list of component objects as input and renders the wiring diagram. This function would need to handle different drawing styles for each component type (horizontal/vertical lines, 90-degree turns, etc.).
+- [ ] **Parsing Logic:**
+   - Write functions to parse each row of the CSV file and create the corresponding component objects based on the characters in each column. You can leverage the dictionary from step 1 to determine the x-coordinate for each component.
+
+## Medium Priority
+
+- [ ] **Data Structure:**
+   - Consider using a dictionary to store the measurements and their associated x-coordinates. The keys would be the x-coordinates (in inches), and the values would be the original measurements (e.g., "2' 0''"). This would make it easier to look up positions later when drawing the diagram.
+- [ ] **Component Representation:**
+   - Create a class or a set of classes to represent the different components (cable connectors, wires, breakouts, turns). This would allow you to encapsulate their drawing logic and potentially store additional attributes (e.g., color, thickness).
+
+## Low Priority
+
+- [ ] **Customization:** 
+   - Allow users to specify colors, line styles, or other visual attributes for the components.
+- [ ] **Interactive Features:** 
+   - Consider adding interactive features like zooming, panning, or selecting specific components for more detailed information.
+- [ ] **Scaling:**
+   - Consider adding a scaling factor to the diagram. This would allow you to adjust the size of the drawing without having to manually modify the measurements in the CSV file.
+
+
