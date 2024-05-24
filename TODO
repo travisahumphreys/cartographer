@@ -1,30 +1,79 @@
-# TODO
-
-NOTE: Alt + C to toggle items in list
+Absolutely! Let's simplify the checklist to make it more accessible to someone with moderate computer literacy, focusing on features and actions rather than technical terms:
 
 ## High Priority
 
-- [ ] **Error Handling:** 
-   - Implement thorough error handling for cases like invalid CSV file formats, incorrect measurements, or unknown component types.
-- [ ] **Drawing Logic:**
-   - Implement a drawing function that takes the list of component objects as input and renders the wiring diagram. This function would need to handle different drawing styles for each component type (horizontal/vertical lines, 90-degree turns, etc.).
-- [ ] **Parsing Logic:**
-   - Write functions to parse each row of the CSV file and create the corresponding component objects based on the characters in each column. You can leverage the dictionary from step 1 to determine the x-coordinate for each component.
+### Prepare the Blueprint (asciimap.csv)
+
+- [ ] Make sure the first row of the CSV has the correct measurements of where components go.
+- [ ] Double-check that the rest of the rows use the right symbols for each type of part (e.g., "C" for connector).
+- [ ] **Fix any errors:**
+    - [ ] Empty cells in the first row
+    - [ ] Measurements that don't look like "feet' inches''" (e.g., "2' 6''")
+    - [ ] Numbers that can't be read as numbers
+
+### Set Up the Parts Library
+
+- [ ] Create a CSV file (`legend.csv`) that lists each symbol and the type of part it stands for.
+- [ ] **Decide on the parts library format:**
+    - [ ] **Option 1:** Put all the information about each part in one big file called `features.json`.
+    - [ ] **Option 2:** Create a folder called `features` and put a separate file for each part inside (e.g., `connector.json`, `breakout.json`).
+- [ ] Make sure each part in the library has the following details:
+    - [ ] A unique name or ID
+    - [ ] The color it should be drawn in
+    - [ ] The basic shape it should be drawn as (e.g., rectangle, circle)
+
+### Build the Diagram
+
+- [ ] **Read the files:**
+    - [ ] Get the measurements from the CSV.
+    - [ ] Get the part symbols and types from `legend.csv`.
+    - [ ] Get the details for each part type from the parts library.
+- [ ] **Create a list of parts:**
+    - [ ] Go through each symbol in the diagram.
+    - [ ] Figure out what type of part it is based on the legend.
+    - [ ] Get the details for that part from the library.
+    - [ ] Calculate where to draw the part based on the measurements.
+    - [ ] Create an object for the part that includes all its information.
+- [ ] **Draw the diagram:**
+    - [ ] Create a new blank diagram (SVG or DXF format).
+    - [ ] Go through the list of parts.
+    - [ ] For each part:
+        - [ ] Draw the part on the diagram based on its type, location, color, and shape.
+        - [ ] Add a label (like an ID) next to the part if needed.
+    - [ ] **Error Handling:** Check for any problems while drawing.
+    - [ ] Save the diagram as an SVG or DXF file.
 
 ## Medium Priority
 
-- [ ] **Data Structure:**
-   - Consider using a dictionary to store the measurements and their associated x-coordinates. The keys would be the x-coordinates (in inches), and the values would be the original measurements (e.g., "2' 0''"). This would make it easier to look up positions later when drawing the diagram.
-- [ ] **Component Representation:**
-   - Create a class or a set of classes to represent the different components (cable connectors, wires, breakouts, turns). This would allow you to encapsulate their drawing logic and potentially store additional attributes (e.g., color, thickness).
+- [ ] Read any notes from the bottom of the `asciimap.csv` file.
+- [ ] Add note markers (e.g., circles) and the note text to the diagram.
+- [ ] Make the part shapes look more detailed or accurate (if needed).
 
 ## Low Priority
 
-- [ ] **Customization:** 
-   - Allow users to specify colors, line styles, or other visual attributes for the components.
-- [ ] **Interactive Features:** 
-   - Consider adding interactive features like zooming, panning, or selecting specific components for more detailed information.
-- [ ] **Scaling:**
-   - Consider adding a scaling factor to the diagram. This would allow you to adjust the size of the drawing without having to manually modify the measurements in the CSV file.
+- [ ] Figure out how to use the wire lookup table to color wires differently.
+- [ ] Let the user choose different colors for parts and wires.
+- [ ] Add features that let the user zoom in, move around, or click on parts for more info.
+- [ ] Let the user choose how big the diagram should be.
 
+## Future Enhancements
+
+- [ ] Automatically create a legend on the diagram that explains the symbols.
+- [ ] Add a title block or other notes to the diagram.
+- [ ] Save the diagram in other formats like PNG or PDF.
+
+## Code Outline (For Reference)
+
+```python
+def parse_measurements(filename): ...
+def parse_legend(legend_file): ...
+def parse_features(features_library): ...
+def parse_components(measurements, legend_file, features_library): ...
+
+class Component: ...
+class CableConnector(Component): ...
+# ... other component classes
+
+def draw_diagram(components, scale_factor, notes, output_file): ...
+```
 
