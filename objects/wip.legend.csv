@@ -1,0 +1,14 @@
+symbol,feature_name,positionality
+"C "," connector",absolute
+"P "," position_indicator",tolerance
+"PP "," pink_position_indicator",absolute
+"B "," breakout",tolerance
+"[] "," sleeve_exact",absolute
+"{} "," sleeve_approximate",tolerance
+"@ "," pressure_seal",absolute
+"| "," breakout_down",dependent
+"┘ "," breakout_left",dependent
+"└ "," breakout_right",dependent
+"- "," fill",fill
+"< "," contact_left",tolerance
+"> "," contact_right",tolerance

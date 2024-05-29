@@ -1,0 +1,21 @@
+{
+    "features": {
+        "connector":{},
+        "position_indicator":
+            {"green":[1,1], 
+             "purple":"", 
+             "pink":"", 
+             "blue":""},
+        "sleeve":{"exact":"", "approximate":""},
+        "pressure_seal":{},
+        "breakout":{}, 
+        "contact":{},
+        "terminal_lug":{},
+        "splice":{}
+    },
+
+    "fillers": { 
+        "wire_fill":{"horizontal":"", "vertical":"", "left_turn":"", "right_turn":""},
+        "ties":{"tape":"", "lace_tie":""}
+    }
+}
